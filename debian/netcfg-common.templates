@@ -142,7 +142,7 @@ _Description: Failure of key exchange and association
 
 Template: netcfg/get_hostname
 Type: string
-Default: debian
+Default: sprezzabox
 # :sl1:
 _Description: Hostname:
  Please enter the hostname for this system.

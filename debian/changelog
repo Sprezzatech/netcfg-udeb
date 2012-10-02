@@ -1,4 +1,4 @@
-netcfg (1.96) UNRELEASED; urgency=low
+netcfg (1.96-SprezzOS1) UNRELEASED; urgency=low
 
   [ Philipp Kern ]
   * Makefile: set DEB_HOST_ARCH{,_OS} conditionally
@@ -11,7 +11,11 @@ netcfg (1.96) UNRELEASED; urgency=low
   [ Samuel Thibault ]
   * Fix ethtool-lite hurd-i386 build.
 
- -- Philipp Kern <pkern@debian.org>  Sat, 29 Sep 2012 17:03:57 +0200
+  [ nick black ]
+  * SprezzOS build
+  * Change default name to sprezzabox
+
+ -- nick black <nick.black@sprezzatech.com>  Tue, 02 Oct 2012 04:16:37 -0400
 
 netcfg (1.95) unstable; urgency=low
 

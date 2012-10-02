@@ -1038,7 +1038,7 @@ int netcfg_get_hostname(struct debconfclient *client, char *template, char *host
                       "maxhostnamelen", buf);
             debconf_input(client, "high", "netcfg/invalid_hostname");
             debconf_go(client);
-            debconf_set(client, template, "debian");
+            debconf_set(client, template, "sprezzabox");
             *hostname = '\0';
         }
 
@@ -1063,7 +1063,7 @@ int netcfg_get_hostname(struct debconfclient *client, char *template, char *host
                       "maxhostnamelen", buf);
             debconf_input(client, "high", "netcfg/invalid_hostname");
             debconf_go(client);
-            debconf_set(client, template, "debian");
+            debconf_set(client, template, "sprezzabox");
             *hostname = '\0';
         } else {
             break;
