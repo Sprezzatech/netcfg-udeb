@@ -1,10 +1,20 @@
-netcfg (1.98-SprezzOS1) unstable; urgency=low
+netcfg (1.99-SprezzOS1) unstable; urgency=low
 
   [ nick black ]
   * SprezzOS build
   * Change default name to sprezzabox
 
  -- nick black <nick.black@sprezzatech.com>  Fri, 05 Oct 2012 04:40:12 -0400
+
+netcfg (1.99) unreleased; urgency=low
+
+  * netcfg.c (main): Remove a local definition of hostname.
+    (Closes: #690330)
+  * Override the hostname found via DHCP or DNS with the preseeded
+    value of the new variable netcfg/hostname, if set. Patch by
+    Floris Bos. (Closes: #606636)
+
+ -- Philipp Kern <pkern@debian.org>  Sat, 13 Oct 2012 13:47:58 +0200
 
 netcfg (1.98) unstable; urgency=low
 
