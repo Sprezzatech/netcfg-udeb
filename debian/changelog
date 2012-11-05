@@ -1,10 +1,21 @@
-netcfg (1.100-SprezzOS1) unstable; urgency=low
+netcfg (1.101-SprezzOS1) unstable; urgency=low
 
   [ nick black ]
   * SprezzOS build
   * Change default name to sprezzabox
 
  -- nick black <nick.black@sprezzatech.com>  Fri, 26 Oct 2012 13:39:44 -0400
+
+netcfg (1.101) unstable; urgency=low
+
+  * Skip reachability test for empty gateway. (Closes: #690868)
+  * Obey netcfg/disable_dhcp for compatibility reasons and disable
+    autoconfig. There's no need to break old preseeding scripts,
+    as the intent is clear.
+  * Add a debconf template for netcfg/disable_autoconfig and state
+    that netcfg/disable_dhcp is deprecated.
+
+ -- Philipp Kern <pkern@debian.org>  Sat, 03 Nov 2012 21:48:31 +0100
 
 netcfg (1.100) unstable; urgency=low
 
