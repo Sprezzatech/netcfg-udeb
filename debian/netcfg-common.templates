@@ -334,13 +334,17 @@ Type: text
 # :sl1:
 _Description: Configure the network
 
-Template: netcfg/network-manager
-Type: boolean
-Default: true
+Template: netcfg/target_network_config
+Type: select
+Choices-C: nm_config, ifupdown, loopback
+Choices: Network Manager, ifupdown (/etc/network/interfaces), No network
+configuration
 Description: for internal use; can be preseeded
- Set to false to prevent /etc/network/interfaces being adjusted for use by
- network-manager. If you do this, network-manager will probably not work
- correctly.
+ Specifies what kind of network connection management tool should be
+ configured post-installation if multiple are available. Automatic
+ selection is used in this order when not specified: network-manager if
+ available, ethernet configuration through ifupdown on wired installation
+ and loopback configuration through ifupdown on wireless installations.
 
 Template: netcfg/link_wait_timeout
 Type: string
