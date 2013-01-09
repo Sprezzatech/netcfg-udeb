@@ -1,3 +1,10 @@
+netcfg (1.104-SprezzOS1) unstable; urgency=low
+
+  [ Julien Cristau ]
+  * debug: use gai_strerror() on getnameinfo() failure
+
+ -- Philipp Kern <pkern@debian.org>  Wed, 09 Jan 2013 01:36:01 +0100
+
 netcfg (1.103-SprezzOS1) unstable; urgency=low
 
   [ nick black ]
