@@ -72,10 +72,9 @@ static int nc_wi_wireless_options(const struct netcfg_interface *interface, FILE
  */
 static int nc_wi_dhcp(const struct netcfg_interface *interface, FILE *fd)
 {
-	fprintf(fd, "\n# The primary network interface\n");
-	if (!iface_is_hotpluggable(interface->name) && !find_in_stab(interface->name))
+	/*if (!iface_is_hotpluggable(interface->name) && !find_in_stab(interface->name))
 		fprintf(fd, "auto %s\n", interface->name);
-	else
+	else*/
 		fprintf(fd, "allow-hotplug %s\n", interface->name);
 	fprintf(fd, "iface %s inet dhcp\n", interface->name);
 	if (!empty_str(interface->dhcp_hostname)) {
@@ -89,7 +88,7 @@ static int nc_wi_dhcp(const struct netcfg_interface *interface, FILE *fd)
  */
 static int nc_wi_slaac(const struct netcfg_interface *interface, FILE *fd)
 {
-	if (interface->dhcp == 0)
+	/*if (interface->dhcp == 0)
 		fprintf(fd, "\n# The primary network interface\n");
 	fprintf(fd, "# This is an autoconfigured IPv6 interface\n");
 	if (interface->dhcp == 0) {
@@ -97,7 +96,8 @@ static int nc_wi_slaac(const struct netcfg_interface *interface, FILE *fd)
 			fprintf(fd, "auto %s\n", interface->name);
 		else
 			fprintf(fd, "allow-hotplug %s\n", interface->name);
-	}
+	}*/
+	fprintf(fd, "allow-hotplug %s\n", interface->name);
 
 	fprintf(fd, "iface %s inet6 auto\n", interface->name);
 /*	fprintf(fd, "\t# Activate RFC 4941 privacy extensions for outgoing connections. The\n");
@@ -119,10 +119,10 @@ static int nc_wi_static_ipv4(const struct netcfg_interface *interface, FILE *fd)
 	netcfg_broadcast_address(interface, broadcast);
 	inet_mtop(AF_INET, interface->masklen, netmask, INET_ADDRSTRLEN);
 
-	fprintf(fd, "\n# The primary network interface\n");
+	/*fprintf(fd, "\n# The primary network interface\n");
 	if (!iface_is_hotpluggable(interface->name) && !find_in_stab(interface->name))
 		fprintf(fd, "auto %s\n", interface->name);
-	else
+	else*/
 		fprintf(fd, "allow-hotplug %s\n", interface->name);
 	fprintf(fd, "iface %s inet static\n", interface->name);
 	fprintf(fd, "\taddress %s\n", interface->ipaddress);
@@ -142,10 +142,10 @@ static int nc_wi_static_ipv4(const struct netcfg_interface *interface, FILE *fd)
  */
 static int nc_wi_static_ipv6(const struct netcfg_interface *interface, FILE *fd)
 {
-	fprintf(fd, "\n# The primary network interface\n");
+	/*fprintf(fd, "\n# The primary network interface\n");
 	if (!iface_is_hotpluggable(interface->name) && !find_in_stab(interface->name))
 		fprintf(fd, "auto %s\n", interface->name);
-	else
+	else*/
 		fprintf(fd, "allow-hotplug %s\n", interface->name);
 	fprintf(fd, "iface %s inet6 static\n", interface->name);
 	fprintf(fd, "\taddress %s\n", interface->ipaddress);
